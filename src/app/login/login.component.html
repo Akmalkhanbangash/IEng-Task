@@ -1,0 +1,37 @@
+<!-- <form action="/action_page.php" method="post"> -->
+<div class="imgcontainer" *ngIf="!isAdmin && !isTeacher && !isStudent">
+    <img src="../.././assets/avatar.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container" *ngIf="!isAdmin && !isTeacher && !isStudent">
+    <div class="loginform">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="objLogin.Email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="objLogin.Password">
+
+        <button type="button" (click)="getlogin()">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+</div>
+
+<div class="container" *ngIf="!isAdmin && !isTeacher && !isStudent" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+</div>
+<!-- </form> -->
+<div class="card " *ngIf="isAdmin || isTeacher || isStudent">
+    <h5 class="card-header">Teacher</h5>
+    <div class="card-body" >
+        <div *ngIf="isAdmin || isTeacher "style="height: 200px; width: 200px; background: greenyellow;" (click)="goto('/teacher')">
+Teacher
+        </div>
+
+        <div class="mt-3" style="height: 200px; width: 200px; background: greenyellow;"*ngIf="isAdmin || isTeacher || isStudent"  (click)="goto('/student')">
+       Student     
+        </div>
+        </div>
+        </div>

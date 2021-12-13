@@ -1,0 +1,65 @@
+<div class="card">
+    <h5 class="card-header">Student</h5>
+    <div class="card-body">
+        <h5 class="card-title">View Student details</h5>
+
+        <div class="row">
+          <div class="col-md-6 mt-1 mb-1">
+              <input class="form-control" type="text" placeholder="First Name" [(ngModel)]="objStudent.firstname">
+          </div>
+          <div class="col-md-6  mt-1 mb-1">
+              <input class="form-control" type="text" placeholder="Last Name" [(ngModel)]="objStudent.lastname">
+          </div>
+          <div class="col-md-6  mt-1 mb-1">
+              <input class="form-control" type="text" placeholder="Assigned Teacher Name" [(ngModel)]="objStudent.AssignedTeacherName">
+          </div>
+
+          <div class="col-md-6  mt-1 mb-1">
+              <input class="form-control" type="text" placeholder="Phone No" [(ngModel)]="objStudent.phoneno">
+          </div>
+          <div class="col-md-6  mt-1 mb-1">
+              <input class="form-control" type="text" placeholder="Address" [(ngModel)]="objStudent.address">
+          </div>
+          <div class="col-md-6  mt-1 mb-1">
+            <input class="form-control" type="text" placeholder="email" [(ngModel)]="objStudent.email">
+        </div>
+          <div class="col-md-12 text-center mt-3"> 
+            
+            <button type="button" class="btn btn-primary ml-1 mr-1" (click)="viewteacher()">view teacher</button>
+              <button type="button" class="btn btn-primary ml-1 mr-1" (click)="saveStudent()">Save</button>
+              <button type="button" class="btn btn-primary ml-1 mr-1"(click)="clear()">Clear</button>    
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="card">
+    <h5 class="card-header">Student</h5>
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Student First Name</th>
+            <th scope="col">Student Last Name</th>
+            <th scope="col">Assigned Teacher Name</th>
+            <th scope="col">Phone No.</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of lstStudent ;let i = index">
+            <th scope="row">{{i}}</th>
+            <td>{{u.firstname}}</td>
+            <td>{{u.lastname}}</td>
+            <td>{{u.AssignedTeacherName}}</td>
+            <td>{{u.phoneno}}</td>
+            <td>{{u.address}}</td>
+            <td>{{u.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
